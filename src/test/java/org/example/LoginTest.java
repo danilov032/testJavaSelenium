@@ -16,11 +16,11 @@ public class LoginTest {
     /**
      * осуществление первоначальной настройки
      */
-    @BeforeEach
+    @BeforeClass
     public static void setup() {
         driver = new ChromeDriver();
         //определение пути до драйвера и его настройка
-        System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("/Users/danilov.and/chromiumdriver/chromedriver"));
+        System.setProperty("webdriver.chrome.driver", "/Users/danilov.and/chromiumdriver/chromedriver");
 
         //создание экземпляра драйвера
 

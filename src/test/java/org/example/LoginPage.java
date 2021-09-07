@@ -10,11 +10,13 @@ public class LoginPage {
     public WebDriver driver;
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.driver = driver; }
+        this.driver = driver;
+    }
     /**
      * определение локатора поля ввода логина
      */
-    @FindBy(xpath = "//*[contains(@id, 'passp-field-login')]")
+//    @FindBy(xpath = "//*[contains(@id, 'passp-field-login')]")
+    @FindBy(id = "Textinput_view_big")
     private WebElement loginField;
     /**
      * определение локатора кнопки входа в аккаунт

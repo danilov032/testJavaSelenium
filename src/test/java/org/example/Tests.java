@@ -1,7 +1,11 @@
 package org.example;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 
 public class Tests{
@@ -14,6 +18,13 @@ public class Tests{
 
         driver.get("https://google.com/");
 
+
+
+        List<WebElement> list = driver.findElements(By.className("gsfi"));
+
+        list.get(1).sendKeys("selenium");
+
+        Thread.sleep(1000);
         driver.quit();
     }
 }
