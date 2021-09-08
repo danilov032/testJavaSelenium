@@ -11,20 +11,20 @@ import java.util.List;
 public class Tests{
 
     @Test
-    public void testGoogle() throws InterruptedException{
+    public void testGoogle(){
+
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+
         WebDriver driver = new ChromeDriver();
 
-        System.setProperty("webdriver.chrome.driver", "/Users/danilov.and/chromiumdriver/chromedriver");
-
         driver.get("https://google.com/");
-
-
 
         List<WebElement> list = driver.findElements(By.className("gsfi"));
 
         list.get(1).sendKeys("selenium");
 
-        Thread.sleep(1000);
+        list.get(1).submit();
+
         driver.quit();
     }
 }
