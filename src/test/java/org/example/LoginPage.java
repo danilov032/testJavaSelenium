@@ -15,8 +15,7 @@ public class LoginPage {
     /**
      * определение локатора поля ввода логина
      */
-//    @FindBy(xpath = "//*[contains(@id, 'passp-field-login')]")
-    @FindBy(id = "Textinput_view_big")
+    @FindBy(xpath = "//*[contains(@id, 'passp-field-login')]")
     private WebElement loginField;
     /**
      * определение локатора кнопки входа в аккаунт

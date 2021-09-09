@@ -19,19 +19,19 @@ public class ProfilePage {
     /**
      * определение локатора меню пользователя
      */
-    @FindBy(xpath = "//*[contains(@class, 'account__name_hasAccentLetter')]")
+    @FindBy(xpath = "//*[contains(@class, 'personal-info-login__text')]")
     private WebElement userMenu;
     /**
      * определение локатора кнопки выхода из аккаунта
      */
-    @FindBy(xpath = "//*[contains(@class, 'menu-item_action_exit menu__item menu__item_type_link')]")
+    @FindBy(xpath = "//*[contains(@class, 'user-account__name')]")
     private WebElement logoutBtn;
     /**
      * метод для получения имени пользователя из меню пользователя
      */
     public String getUserName() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'account__name_hasAccentLetter')]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'personal-info-login__text')]")));
         String userName = userMenu.getText();
         return userName;
     }

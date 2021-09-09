@@ -18,12 +18,10 @@ public class LoginTest {
      */
     @BeforeClass
     public static void setup() {
-        driver = new ChromeDriver();
         //определение пути до драйвера и его настройка
-        System.setProperty("webdriver.chrome.driver", "/Users/danilov.and/chromiumdriver/chromedriver");
-
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         //создание экземпляра драйвера
-
+        driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
         profilePage = new ProfilePage(driver);
         //окно разворачивается на полный экран
@@ -38,9 +36,6 @@ public class LoginTest {
      */
     @Test
     public void loginTest() {
-        //получение доступа к методам класса LoginPage для взаимодействия с элементами страницы
-        //значение login/password берутся из файла настроек по аналогии с chromedriver
-        //и loginpage
         //вводим логин
         loginPage.inputLogin(ConfProperties.getProperty("login"));
         //нажимаем кнопку входа
